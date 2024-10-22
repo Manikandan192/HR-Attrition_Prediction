@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>HR Attrition Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>HR Attrition Prediction</h1>
+        <form action="/predict" method="POST">
+            <div>
+                <label>Age</label>
+                <input type="number" name="age" max="100" required>
+            </div>
+            <div>
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                    <option value="2">Others</option>
+                </select>
+            </div>
+            <div>
+                <label>Experience Years</label>
+                <input type="number" name="experience_years" max="80" required>
+            </div>
+            <div>
+                <label>Job Role</label>
+                <select name="job_role" required>
+                    <option value="0">HR Assistant</option>
+                    <option value="1">HR Coordinator</option>
+                    <option value="2">Talent Acquisition Specialist</option>
+                    <option value="3">HR Manager</option>
+                    <option value="4">HR Business Partner</option>
+                    <option value="5">Learning and Development Specialist</option>
+                    <option value="6">Compensation and Benefits Analyst</option>
+                    <option value="7">Employee Relations Manager</option>
+                </select>
+            </div>
+            <div>
+                <label>Job Satisfaction (1-5)</label>
+                <input type="number" name="job_satisfaction" min="1" max="5" required>
+            </div>
+            <div>
+                <label>Performance Rating (1-5)</label>
+                <input type="number" name="performance_rating" min="1" max="5" required>
+            </div>
+            <div>
+                <label>Training Hours</label>
+                <input type="number" name="training_hours" required>
+            </div>
+            <div>
+                <label>Salary</label>
+                <input type="number" name="salary" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
